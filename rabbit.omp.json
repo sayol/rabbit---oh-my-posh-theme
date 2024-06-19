@@ -11,7 +11,7 @@
           "leading_diamond": "\u256d\u2500\ue0b2",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",
-          "template": " \ueb7b  ",
+          "template": " \uf489  ",
           "type": "text"
         },
         {
@@ -23,7 +23,7 @@
             "discharging_icon": " \uf242 "
           },
           "style": "diamond",
-          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}% ",
+          "template": "{{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }}{{ .Error }}% ",
           "type": "battery"
         },
         {
@@ -57,10 +57,12 @@
             "{{ if gt .Behind 0 }}#f17c37{{ end }}"
           ],
           "properties": {
+            "branch_icon": "\uf126 ",
             "branch_max_length": 25,
             "fetch_stash_count": true,
             "fetch_status": true,
-            "fetch_upstream_icon": true
+            "fetch_upstream_icon": true,
+            "github_icon": "\uf408 "
           },
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "trailing_diamond": "\ue0b4",
@@ -76,7 +78,7 @@
         {
           "foreground": "#ffff00",
           "style": "plain",
-          "template": "\u2570\u2500\ue602",
+          "template": "\u2570\u2500\ue602 ",
           "type": "text"
         }
       ],
@@ -84,6 +86,6 @@
     }
   ],
   "console_title_template": "{{.UserName}}@{{.HostName}}",
-  "final_space": true,
+  "final_space": false,
   "version": 2
 }
