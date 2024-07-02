@@ -1,1 +1,1 @@
-Import-Module -Name Terminal-Icons | Set-PSReadlineOption -PredictionSource History | Set-PSReadlineOption -PredictionViewStyle ListView | oh-my-posh init pwsh --config "C:\Users\Dell\AppData\Local\Programs\oh-my-posh\themes\rabbit.omp.json" | Invoke-Expression
+Import-Module -Name Terminal-Icons | Set-PSReadlineOption -PredictionSource History | Set-PSReadlineOption -PredictionViewStyle ListView | oh-my-posh init pwsh --config "$Env:POSH_THEMES_PATH/rabbit.omp.json" | Invoke-Expression
