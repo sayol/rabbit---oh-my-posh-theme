@@ -1,0 +1,1 @@
+Import-Module -Name Terminal-Icons | oh-my-posh init powershell --config "$Env:POSH_THEMES_PATH/rabbit.omp.json" | Invoke-Expression
