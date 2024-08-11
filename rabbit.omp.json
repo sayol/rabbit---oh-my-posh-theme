@@ -3,7 +3,7 @@
   "blocks": [
     {
       "alignment": "left",
-      "newline": false,
+      "newline": true,
       "segments": [
         {
           "background": "#ffff00",
@@ -15,7 +15,7 @@
           "type": "text"
         },
         {
-          "background": "#00ffff",
+          "background": "#ff0077",
           "foreground": "#000000",
           "properties": {
             "charged_icon": " \ueb2d ",
@@ -23,16 +23,8 @@
             "discharging_icon": " \uf242 "
           },
           "style": "diamond",
-          "template": "{{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }}{{ .Error }}% ",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}% ",
           "type": "battery"
-        },
-        {
-          "background": "#ff0000",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "style": "diamond",
-          "template": " \uf015  ",
-          "type": "text"
         },
         {
           "background": "#0000ff",
@@ -80,6 +72,13 @@
           "style": "plain",
           "template": "\u2570\u2500\ue602 ",
           "type": "text"
+        },
+        {
+          "foreground": "#00ff00",
+          "powerline_symbol": "\ue0b0",
+          "style": "plain",
+          "template": "[\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}] ",
+          "type": "python"
         }
       ],
       "type": "prompt"
