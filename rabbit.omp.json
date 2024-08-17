@@ -11,7 +11,7 @@
           "leading_diamond": "\u256d\u2500\ue0b2",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",
-          "template": " {{.Icon}}{{ if .WSL }} bash{{ else }} posh{{ end }} ",
+          "template": " {{.Icon}}{{ if .WSL }} bash{{ else }} pwsh{{ end }} ",
           "type": "os"
         },
         {
