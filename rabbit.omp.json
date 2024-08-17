@@ -3,7 +3,7 @@
   "blocks": [
     {
       "alignment": "left",
-      "newline": true,
+      "newline": false,
       "segments": [
         {
           "background": "#ffff00",
@@ -11,8 +11,8 @@
           "leading_diamond": "\u256d\u2500\ue0b2",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",
-          "template": " \uf489  ",
-          "type": "text"
+          "template": " {{.Icon}}{{ if .WSL }} bash{{ else }} posh{{ end }} ",
+          "type": "os"
         },
         {
           "background": "#ff0077",

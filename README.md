@@ -136,7 +136,17 @@ AllUsersCurrentHost -    C:\Program Files\WindowsPowerShell\Modules
 
 BuiltInModules (AllUsers) -    C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
 
+
 ```
+# WSL
+
+```
+\\wsl.localhost\Ubuntu-20.04\home\michael\.local\bin
+\\wsl.localhost\Ubuntu-20.04\home\michael\.cache\oh-my-posh\themes\rabbit.omp.json
+\\wsl.localhost\Ubuntu-20.04\home\michael\.profile
+eval "$(oh-my-posh init bash --config '~/.cache/oh-my-posh/themes/rabbit.omp.json')"
+```
+
 # References
 
 * [Oh-My-Posh](https://ohmyposh.dev/docs/installation/customize)
