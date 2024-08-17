@@ -11,8 +11,15 @@
           "leading_diamond": "\u256d\u2500\ue0b2",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",
-          "template": " {{.Icon}}{{ if .WSL }} bash{{ else }} pwsh{{ end }} ",
+          "template": " {{.Icon}} ",
           "type": "os"
+        },
+        {
+          "background": "#ffff00",
+          "foreground": "#000000",
+          "style": "diamond",
+          "template": "{{.Name}} ",
+          "type": "shell"
         },
         {
           "background": "#ff0077",
@@ -31,7 +38,10 @@
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "style": "folder"
+            "style": "agnoster_short",
+            "folder_separator_icon": "\\",
+            "hide_root_location": false,
+            "max_depth": 1
           },
           "style": "powerline",
           "template": " <#ffff00>\ue5fe</> {{ .Path }} ",
