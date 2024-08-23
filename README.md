@@ -98,23 +98,41 @@ To see the icons displayed in Oh My Posh, install a Nerd Font, and configure you
 </br>
 
 ####  _Note: PowerShell Profile Path_
-```
-AllUsersAllHosts -       C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 
-AllUsersCurrentHost -    C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
+* Find out where the configuration file is
 
-CurrentUserAllHosts -    C:\Users\UserName\Documents\WindowsPowerShell\profile.ps1
+    ```CMD
+    AllUsersAllHosts -       C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 
-CurrentUserCurrentHost - C:\Users\UserName\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-```
+    AllUsersCurrentHost -    C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
+
+    CurrentUserAllHosts -    C:\Users\UserName\Documents\WindowsPowerShell\profile.ps1
+
+    CurrentUserCurrentHost - C:\Users\UserName\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+    ```
 
 * For above last command work for WindowsPowerShell-5
 
-```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```
+    ```CMD
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```
 
 * To disable logo go to setting and edit Command Line to
 
-```%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo```
+    ```CMD
+    %SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo```
+
+* To have autocompletion work, install the following module in WindowsPowerShell
+
+    ```CMD
+    Install-Module -Name PSReadLine -Force -SkipPublisherCheck```
+
+* Set the following commands
+
+    ```CMD
+    Set-PSReadlineOption -HistoryNoDuplicates
+    Set-PSReadlineOption -HistorySaveStyle SaveIncrementally
+
+    ```
 
 </br>
 
@@ -122,11 +140,11 @@ CurrentUserCurrentHost - C:\Users\UserName\Documents\WindowsPowerShell\Microsoft
 
 * Add the following line
 
-```eval "$(oh-my-posh --init --shell bash --config c:/Users/say_o/AppData/Local/Programs/oh-my-posh/themes/rabbit.omp.json)"```
+    ```eval "$(oh-my-posh --init --shell bash --config c:/Users/say_o/AppData/Local/Programs/oh-my-posh/themes/rabbit.omp.json)"```
 
 * to the file
 
-```C:\Users\<UserName>\.bashrc```
+    ```C:\Users\<UserName>\.bashrc```
 
 ####  _Note: PowerShell Modules Path ($ENV: PSModulePath)_
 ```
@@ -146,6 +164,16 @@ BuiltInModules (AllUsers) -    C:\WINDOWS\system32\WindowsPowerShell\v1.0\Module
 \\wsl.localhost\Ubuntu-20.04\home\michael\.profile
 eval "$(oh-my-posh init bash --config '~/.cache/oh-my-posh/themes/rabbit.omp.json')"
 ```
+
+# CMD
+
+1. Install `clink` from [https://mridgers.github.io/clink/](https://mridgers.github.io/clink/)
+
+1. To disable startup prompt message, execute the following command in cmd `clink autorun install -- --quiet`
+1. Execute the `clink info` to see the installation directory of `scripts`
+1. In my case, `C:\Users\Dell\AppData\Local\clink\`
+1. Create a file called `oh-my-posh.lua` and add `load(io.popen('oh-my-posh init cmd --config "C:\\Users\\Dell\\AppData\\Local\\Programs\\oh-my-posh\\themes\\rabbit.omp.json"'):read("*a"))()`
+
 
 # References
 
