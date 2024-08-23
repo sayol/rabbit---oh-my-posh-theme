@@ -170,6 +170,7 @@ eval "$(oh-my-posh init bash --config '~/.cache/oh-my-posh/themes/rabbit.omp.jso
 1. Install `clink` from [https://mridgers.github.io/clink/](https://mridgers.github.io/clink/)
 
 1. To disable startup prompt message, execute the following command in cmd `clink autorun install -- --quiet`
+1. In Windows Terminal settings, add `/k` flag to the `%SystemRoot%\System32\cmd.exe`. So, it would be `%SystemRoot%\System32\cmd.exe /k` 
 1. Execute the `clink info` to see the installation directory of `scripts`
 1. In my case, `C:\Users\Dell\AppData\Local\clink\`
 1. Create a file called `oh-my-posh.lua` and add `load(io.popen('oh-my-posh init cmd --config "C:\\Users\\Dell\\AppData\\Local\\Programs\\oh-my-posh\\themes\\rabbit.omp.json"'):read("*a"))()`
