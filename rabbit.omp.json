@@ -11,7 +11,7 @@
             "cache_duration": "none"
           },
           "leading_diamond": "\u256d\u2500\ue0b2",
-          "template": " {{.Icon}} ",
+          "template": " <#0000ff>{{.Icon}}</> ",
           "foreground": "#000000",
           "powerline_symbol": "\ue0b0",
           "background": "#ffff00",
@@ -31,14 +31,13 @@
         {
           "properties": {
             "cache_duration": "none",
-            "charged_icon": " \ueb2d ",
-            "charging_icon": " \uf492 ",
-            "discharging_icon": " \uf242 "
+            "display_default": true,
+            "display_mode": "always"
           },
-          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}% ",
-          "foreground": "#000000",
-          "background": "#ff0077",
-          "type": "battery",
+          "template": "{{ if not .Error }} <#ffff00>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }} {{ end }}",
+          "foreground": "#ffffff",
+          "background": "#dd0000",
+          "type": "python",
           "style": "diamond"
         },
         {
@@ -95,18 +94,6 @@
           "template": "\u2570\u2500\ue602 ",
           "foreground": "#ffff00",
           "type": "text",
-          "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "none",
-            "display_default": true,
-            "display_mode": "always"
-          },
-          "template": "{{ if not .Error }}(<#ffff00>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}python{{ end }}<#ff0000>\uf004</> {{ .Full }}) {{ end }}",
-          "foreground": "#00ff00",
-          "powerline_symbol": "\ue0b0",
-          "type": "python",
           "style": "plain"
         }
       ],
