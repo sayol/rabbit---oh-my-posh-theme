@@ -1,1 +1,1 @@
-Import-Module -Name Terminal-Icons | oh-my-posh init powershell --config "$Env:POSH_THEMES_PATH/rabbit.omp.json" | Invoke-Expression
+Import-Module -Name Terminal-Icons | Set-PSReadlineOption -PredictionSource History | Set-PSReadlineOption -PredictionViewStyle InlineView | oh-my-posh init pwsh --config "$Env:POSH_THEMES_PATH/rabbit.omp.json" | Invoke-Expression

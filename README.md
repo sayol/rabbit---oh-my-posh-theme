@@ -6,13 +6,13 @@ There are number of ways you can install Oh-My-Posh. But commonly you install Oh
 
 #### If you want to use 'winget', run following:
 
-```
+```pwsh
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
 #### If you want to use PSGallery 'Install-Module', run the following:
 
-```
+```pwsh
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
@@ -41,7 +41,7 @@ _<sub> In PowerShellGet 1.x versions, the default is AllUsers, which requires el
  </br>
 
 ####  _Note: Path to PowerShell Home Directory ($PSHOME)_
-```
+```pwsh
 C:\Windows\System32\WindowsPowerShell
 ```
 
@@ -50,11 +50,11 @@ C:\Windows\System32\WindowsPowerShell
 ### 2. List Default Available Themes
 
 To display every available theme in the current directory, use the following cmdlet.
-```
+```pwsh
 Get-PoshThemes
 ```
 The module installs all themes in the module folder. To find the actual files, you can use the following command:
-```
+```pwsh
 Get-PoshThemes -list
 ```
 
@@ -64,7 +64,7 @@ Get-PoshThemes -list
 
 Edit your PowerShell $PROFILE and add the following lines to load Oh-My-Posh module and theme of your choice at startup. Autocompletion is available so it will loop through all available themes. Refer the [last section](https://gist.github.com/adojos/d7904b76af760430ad086473da759d97#point_right-powershell-profile-path) of this gist to know the location of your PowerShell profile.
 
-```
+```pwsh
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme jandedobbeleer
 ```
@@ -77,13 +77,13 @@ In order to update oh-my-posh module to latest available version, run one of the
 
 #### If using 'winget', run the following:
 
-```
+```pwsh
 winget upgrade JanDeDobbeleer.OhMyPosh -s winget
 ```
 
 #### If using PSGallery, 'Update-Module', run the following:
 
-```
+```pwsh
 Update-Module oh-my-posh
 ```
 
@@ -101,7 +101,7 @@ To see the icons displayed in Oh My Posh, install a Nerd Font, and configure you
 
 * Find out where the configuration file is
 
-    ```CMD
+    ```pwsh
     AllUsersAllHosts -       C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 
     AllUsersCurrentHost -    C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
@@ -110,28 +110,44 @@ To see the icons displayed in Oh My Posh, install a Nerd Font, and configure you
 
     CurrentUserCurrentHost - C:\Users\UserName\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
     ```
+* You can check the execution policy first
 
+    ```pwsh
+    Get-ExecutionPolicy -List
+    ```
+* The result should be as the following output
+    ```pwsh
+            Scope ExecutionPolicy
+            ----- ---------------
+        MachinePolicy       Undefined
+           UserPolicy       Undefined
+              Process       Undefined
+          CurrentUser       Restricted
+         LocalMachine       Restricted
+    ```
 * For above last command work for WindowsPowerShell-5
 
-    ```CMD
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```
+    ```pwsh
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
 
 * To disable logo go to setting and edit Command Line to
 
-    ```CMD
-    %SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo```
+    ```pwsh
+    %SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo
+    ```
 
 * To have autocompletion work, install the following module in WindowsPowerShell
 
-    ```CMD
-    Install-Module -Name PSReadLine -Force -SkipPublisherCheck```
+    ```pwsh
+    Install-Module -Name PSReadLine -Force -SkipPublisherCheck
+    ```
 
 * Set the following commands
 
-    ```CMD
+    ```pwsh
     Set-PSReadlineOption -HistoryNoDuplicates
     Set-PSReadlineOption -HistorySaveStyle SaveIncrementally
-
     ```
 
 </br>
@@ -140,14 +156,18 @@ To see the icons displayed in Oh My Posh, install a Nerd Font, and configure you
 
 * Add the following line
 
-    ```eval "$(oh-my-posh --init --shell bash --config c:/Users/say_o/AppData/Local/Programs/oh-my-posh/themes/rabbit.omp.json)"```
+    ```bash
+    eval "$(oh-my-posh --init --shell bash --config c:/Users/say_o/AppData/Local/Programs/oh-my-posh/themes/rabbit.omp.json)"
+    ```
 
 * to the file
 
-    ```C:\Users\<UserName>\.bashrc```
+    ```bash
+    C:\Users\<UserName>\.bashrc
+    ```
 
 ####  _Note: PowerShell Modules Path ($ENV: PSModulePath)_
-```
+```pwsh
 CurrentUser -       C:\Users\UserName\Documents\WindowsPowerShell\Modules
 
 AllUsersCurrentHost -    C:\Program Files\WindowsPowerShell\Modules
@@ -158,7 +178,7 @@ BuiltInModules (AllUsers) -    C:\WINDOWS\system32\WindowsPowerShell\v1.0\Module
 ```
 # WSL
 
-```
+```pwsh
 \\wsl.localhost\Ubuntu-20.04\home\michael\.local\bin
 \\wsl.localhost\Ubuntu-20.04\home\michael\.cache\oh-my-posh\themes\rabbit.omp.json
 \\wsl.localhost\Ubuntu-20.04\home\michael\.profile
