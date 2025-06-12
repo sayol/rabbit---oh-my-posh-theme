@@ -149,10 +149,40 @@ To see the icons displayed in Oh My Posh, install a Nerd Font, and configure you
     Set-PSReadlineOption -HistoryNoDuplicates
     Set-PSReadlineOption -HistorySaveStyle SaveIncrementally
     ```
+### Terminal Icons
 
+* To install **terminal icons**, launch terminal as admin and execute powershell script:
+
+```pwsh
+Install-Module -Name Terminal-Icons -Repository PSGallery
+```
+
+* At this end, we can configurate as:
+
+```pwsh
+New-Item -Path $PROFILE -Type File -Force
+```
+
+* after creating the configuration file:
+
+```pwsh
+notepad $PROFILE
+```
+
+* and paste the script into the file:
+
+```pwsh
+Import-Module -Name Terminal-Icons | Set-PSReadlineOption -PredictionSource History | Set-PSReadlineOption -PredictionViewStyle InlineView | oh-my-posh init pwsh --config "$Env:POSH_THEMES_PATH/rabbit.omp.json" | Invoke-Expression
+```
+
+* To take effect, execute the following power shell script:
+
+```pwsh
+. $PROFILE
+```
 </br>
 
-#### Git Bash
+#### Git Bash Shell
 
 * Add the following line
 
