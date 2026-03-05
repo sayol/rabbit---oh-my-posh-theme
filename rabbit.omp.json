@@ -7,9 +7,6 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "leading_diamond": "\u256d\u2500\ue0b2",
           "template": " <#0000ff>{{.Icon}}</> ",
           "foreground": "#000000",
@@ -19,9 +16,6 @@
           "style": "diamond"
         },
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "{{.Name}} ",
           "foreground": "#000000",
           "background": "#ffff00",
@@ -29,7 +23,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_default": true,
             "display_mode": "always",
@@ -42,8 +36,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
-            "cache_duration": "none",
+          "options": {
             "folder_separator_icon": "\\",
             "hide_root_location": false,
             "max_depth": 1,
@@ -57,11 +50,8 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "branch_icon": "\uf418 ",
-            "branch_max_length": 25,
-            "cache_duration": "none",
-            "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "git_icon": "\uf02a2",
@@ -89,7 +79,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\u2570\u2500\ue602 ",
