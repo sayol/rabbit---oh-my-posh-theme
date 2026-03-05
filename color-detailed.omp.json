@@ -19,7 +19,7 @@
           "leading_diamond": "\ue0b2",
           "trailing_diamond": "\ue0b0",
           "style": "diamond",
-          "template": " \ue266 RAM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266  ",
+          "template": " <#44ff44>\ue266</> RAM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB <#44ff44>\ue266</>  ",
           "type": "sysinfo"
         },
         {
@@ -84,7 +84,7 @@
           "options": {
             "folder_icon": "<#FFEE44>\ue5fe </>",
             "folder_separator_icon": "/",
-            "home_icon": "<#0078D7>\uf015</>"
+            "home_icon": "<#0078D7>\uf015 </>"
           },
           "style": "plain",
           "template": " <#FFEE44>\uef81 </> {{ .Path }}",
