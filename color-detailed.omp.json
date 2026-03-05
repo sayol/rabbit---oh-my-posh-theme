@@ -17,6 +17,7 @@
           "background": "#0000ff",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
           "style": "diamond",
           "template": " \ue266 RAM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266  ",
           "type": "sysinfo"
@@ -35,7 +36,6 @@
           "background": "#00ff00",
           "type": "git",
           "style": "diamond",
-          "leading_diamond": "\ue0b2",
           "trailing_diamond": "\ue0b0",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffbe0b{{ end }}",
@@ -58,7 +58,7 @@
         },
         {
           "options": {
-            "time_format": "15:04"
+            "time_format": "03:04 PM"
           },
           "style": "plain",
           "template": " <#ff0000>\uf4e1</> {{ .CurrentDate | date .Format }} |",
@@ -76,18 +76,18 @@
             "display_mode": "always",
             "folder_name_fallback": false
           },
-          "template": "{{ if not .Error }} <#0000ff>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }} {{ end }}|",
+          "template": "{{ if not .Error }} <#44AAFF>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }} {{ end }}|",
           "type": "python",
           "style": "plain"
         },
         {
           "options": {
-            "folder_icon": "\uf07b ",
-            "folder_separator_icon": " \uf061 ",
-            "home_icon": "\ueb06 "
+            "folder_icon": "<#FFEE44>\ue5fe </>",
+            "folder_separator_icon": "/",
+            "home_icon": "<#0078D7>\uf015</>"
           },
           "style": "plain",
-          "template": " <#ffff00>\ue5fe</> {{ .Path }} ",
+          "template": " <#FFEE44>\uef81 </> {{ .Path }}",
           "type": "path"
         }
       ],
