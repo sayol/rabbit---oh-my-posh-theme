@@ -109,11 +109,6 @@
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{ .Folder }}",
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#ffffff",
-    "template": "\ue285 "
-  },
+  "console_title_template": "{{.UserName}}@{{.HostName}}",
   "version": 4
 }
