@@ -43,6 +43,17 @@
             "{{ if gt .Ahead 0 }}#89d1dc{{ end }}",
             "{{ if gt .Behind 0 }}#f17c37{{ end }}"
           ]
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "options": {
+            "always_enabled": true,
+            "style": "roundrock",
+            "threshold": 0
+          }
         }
       ],
       "type": "prompt"
@@ -55,14 +66,6 @@
           "style": "plain",
           "template": "\u256d\u2500",
           "type": "text"
-        },
-        {
-          "options": {
-            "time_format": "03:04 PM"
-          },
-          "style": "plain",
-          "template": " <#FFEE44>\uf0f3</> {{ .CurrentDate | date .Format }} |",
-          "type": "time"
         },
         {
           "type": "node",
@@ -83,6 +86,14 @@
           "template": "{{ if not .Error }} <#44AAFF>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }} {{ end }}|",
           "type": "python",
           "style": "plain"
+        },
+        {
+          "type": "r",
+          "style": "plain",
+          "template": " <#276BBE>\ue881</> {{ .Full }} |",
+          "options": {
+            "display_mode": "always"
+          }
         },
         {
           "options": {
