@@ -64,13 +64,15 @@
       "segments": [
         {
           "style": "plain",
+          "foreground": "#FFFFFF",
           "template": "\u256d\u2500",
           "type": "text"
         },
         {
           "type": "node",
           "style": "plain",
-          "template": " <#6CA35E>\ue718</> {{ .Full }} |",
+          "foreground": "#FFFFFF",
+          "template": " <#44ff44>\ue718</> {{ .Full }} |",
           "options": {
             "fetch_package_manager": false,
             "display_mode": "always"
@@ -83,6 +85,7 @@
             "display_mode": "always",
             "folder_name_fallback": false
           },
+          "foreground": "#FFFFFF",
           "template": "{{ if not .Error }} <#44AAFF>\ue235</> {{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }} {{ end }}|",
           "type": "python",
           "style": "plain"
@@ -90,7 +93,8 @@
         {
           "type": "r",
           "style": "plain",
-          "template": " <#276BBE>\ue881</> {{ .Full }} |",
+          "foreground": "#FFFFFF",
+          "template": " <#44AAFF>\ue881</> {{ .Full }} |",
           "options": {
             "display_mode": "always"
           }
@@ -99,9 +103,10 @@
           "options": {
             "folder_icon": "<#FFEE44>\ue5fe </>",
             "folder_separator_icon": "/",
-            "home_icon": "<#0078D7>\uf015 </>"
+            "home_icon": "<#44AAFF>\uf015 </>"
           },
           "style": "plain",
+          "foreground": "#FFFFFF",
           "template": " <#FFEE44>\uef81 </> {{ .Path }}",
           "type": "path"
         }
@@ -117,12 +122,14 @@
             "always_enabled": true
           },
           "style": "plain",
+          "foreground": "#FFFFFF",
           "template": "\u2570\u2500 ",
           "type": "status"
         },
         {
           "type": "session",
           "style": "plain",
+          "foreground": "#FFFFFF",
           "template": "{{ if .Root }}<#44AAFF>\udb81\udc83</>{{ else }}<#FFFFFF>\uf007</>{{ end }} ",
           "options": {
             "root_icon": "\udb81\udc83",
