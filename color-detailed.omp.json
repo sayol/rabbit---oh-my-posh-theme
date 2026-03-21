@@ -24,13 +24,13 @@
         },
         {
           "options": {
-            "branch_icon": "\uf418 ",
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "git_icon": "\uf02a2",
-            "github_icon": "\uf408 "
+            "git_icon": "\ue702 ",
+            "github_icon": "\uf408 ",
+            "branch_icon": "\uf418 "
           },
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": " {{ if .UpstreamIcon }}{{ .UpstreamIcon }}{{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "foreground": "#000000",
           "powerline_symbol": "\ue0b0",
           "background": "#00ff00",
@@ -61,13 +61,17 @@
             "time_format": "03:04 PM"
           },
           "style": "plain",
-          "template": " <#ff0000>\uf4e1</> {{ .CurrentDate | date .Format }} |",
+          "template": " <#FFEE44>\uf0f3</> {{ .CurrentDate | date .Format }} |",
           "type": "time"
         },
         {
+          "type": "node",
           "style": "plain",
-          "template": " \uf292 ",
-          "type": "root"
+          "template": " <#6CA35E>\ue718</> {{ .Full }} |",
+          "options": {
+            "fetch_package_manager": false,
+            "display_mode": "always"
+          }
         },
         {
           "options": {
@@ -104,6 +108,14 @@
           "style": "plain",
           "template": "\u2570\u2500 ",
           "type": "status"
+        },
+        {
+          "type": "root",
+          "style": "plain",
+          "template": "<#44AAFF>\udb81\udc83</> ",
+          "options": {
+            "root_icon": "\udb81\udc83"
+          }
         }
       ],
       "type": "prompt"
