@@ -110,11 +110,12 @@
           "type": "status"
         },
         {
-          "type": "root",
+          "type": "session",
           "style": "plain",
-          "template": "<#44AAFF>\udb81\udc83</> ",
+          "template": "{{ if .Root }}<#44AAFF>\udb81\udc83</>{{ else }}<#FFFFFF>\uf007</>{{ end }} ",
           "options": {
-            "root_icon": "\udb81\udc83"
+            "root_icon": "\udb81\udc83",
+            "display_mode": "always"
           }
         }
       ],
