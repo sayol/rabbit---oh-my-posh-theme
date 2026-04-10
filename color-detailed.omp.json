@@ -68,16 +68,25 @@
           "template": "\u256d\u2500",
           "type": "text"
         },
-        {
-          "type": "node",
-          "style": "plain",
-          "foreground": "#FFFFFF",
-          "template": " <#44ff44>\ue718</> {{ .Full }} |",
-          "options": {
-            "fetch_package_manager": false,
-            "display_mode": "always"
-          }
-        },
+        // {
+        //   "type": "node",
+        //   "style": "plain",
+        //   "foreground": "#FFFFFF",
+        //   "template": " <#44ff44>\ue718</> {{ .Full }} |",
+        //   "options": {
+        //     "fetch_package_manager": false,
+        //     "display_mode": "always"
+        //   }
+        // },
+        // {
+        //   "type": "flutter",
+        //   "style": "plain",
+        //   "foreground": "#FFFFFF",
+        //   "template": " <#44AAFF>\ue7dd</> {{ .Full }} |",
+        //   "options": {
+        //     "display_mode": "always"
+        //   }
+        // },
         {
           "options": {
             "cache_duration": "none",
